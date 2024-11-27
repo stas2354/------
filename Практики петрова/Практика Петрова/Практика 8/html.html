@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Практика 8</title>
+<style>
+body { font-family: sans-serif; }
+.task { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<h1>Практика 8</h1>
+
+<div class="task">
+  <h2>Задача 1: Среднее арифметическое положительных</h2>
+  <p id="task1-output"></p>
+  <button onclick="task1()">Выполнить</button>
+</div>
+
+<div class="task">
+  <h2>Задача 2: Замена отрицательных на квадраты</h2>
+  <p>Исходный массив: [-5, 2, -8, 0, 15, -3, 7, -10, 20, 1, -2, 12, -7, 25, 3,-1]</p>
+  <p id="task2-output"></p>
+  <button onclick="task2()">Выполнить</button>
+</div>
+
+<div class="task">
+  <h2>Задача 3: Статистика массива</h2>
+  <p>Введите массив (числа через запятую): <input type="text" id="task3-input"></p>
+  <p id="task3-output"></p>
+  <button onclick="task3()">Выполнить</button>
+</div>
+
+<div class="task">
+  <h2>Задача 4: Симулятор цветов</h2>
+  <p id="task4-output"></p>
+  <button onclick="task4()">Выполнить</button>
+</div>
+
+<script>
+function task1() {
+  const arr = [];
+  for (let i = 0; i < 15; i++) {
+    arr.push(Math.floor(Math.random() * 41 - 10));
+  }
+
+  let sumPositive = 0;
+  let countPositive = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sumPositive += arr[i];
+      countPositive++;
+    }
+  }
+
+  const avgPositive = countPositive > 0 ? sumPositive / countPositive : 0;
+  document.getElementById("task1-output").textContent = `Массив: ${arr}, Среднее положительных: ${avgPositive}`;
+}
+
+function task2() {
+  const arr = [-5, 2, -8, 0, 15, -3, 7, -10, 20, 1, -2, 12, -7, 25, 3, -1];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      arr[i] *= arr[i];
+    }
+  }
+  document.getElementById("task2-output").textContent = `Измененный массив: ${arr}`;
+}
+
+function task3() {
+  const input = document.getElementById("task3-input").value;
+  const arr = input.split(",").map(Number);
+
+  let sumPositive = 0;
+  let countPositive = 0;
+  let sumNegative = 0;
+  let countNegative = 0;
+  let countZero = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sumPositive += arr[i];
+      countPositive++;
+    } else if (arr[i] < 0) {
+      sumNegative += arr[i];
+      countNegative++;
+    } else {
+      countZero++;
+    }
+  }
+
+  const avgPositive = countPositive > 0 ? sumPositive / countPositive : 0;
+  const avgNegative = countNegative > 0 ? sumNegative / countNegative : 0;
+
+  document.getElementById("task3-output").textContent = 
+    `Среднее положительных: ${avgPositive}, Среднее отрицательных: ${avgNegative}, Количество нулей: ${countZero}`;
+}
+
+function task4() {
+  const results = [0, 0, 0];
+  const numIterations = 1000000;
+
+  for (let i = 0; i < numIterations; i++) {
+    results[Math.floor(Math.random() * 3)]++;
+  }
+
+  document.getElementById("task4-output").textContent = `Результаты: ${results}, Максимум красных: ${results[0]}`;
+}
+</script>
+
+</body>
+</html>
+

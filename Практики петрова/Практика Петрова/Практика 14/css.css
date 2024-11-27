@@ -1,0 +1,44 @@
+.header {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .header__logo {
+    font-size: 2em;
+  }
+  
+  .navigation {
+    text-align: center;
+  }
+  
+  .navigation__list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navigation__item {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .main {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    padding: 10px;
+  }
+  
+  .main__content {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+  }
+  
+  
