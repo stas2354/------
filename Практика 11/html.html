@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email Filter</title>
+</head>
+<body>
+  <input type="text" id="emailFilter" placeholder="Filter emails">
+  <ul id="emailList"></ul>
+  <script src="js.js">
+    const emails = ["test1@example.com", "test2@example.com", "another@mail.com", "test3@example.com"];
+    const emailList = document.getElementById('emailList');
+    const filterInput = document.getElementById('emailFilter');
+
+    const renderEmails = (filteredEmails) => {
+      emailList.innerHTML = ''; // Очищаем список
+      filteredEmails.forEach(email => {
+        const li = document.createElement('li');
+        li.textContent = email;
+        emailList.appendChild(li);
+      });
+    };
+
+    const filterEmails = (filterText) => {
+      const filtered = emails.filter(email => email.toLowerCase().includes(filterText.toLowerCase()));
+      renderEmails(filtered);
+    };
+
+    filterInput.addEventListener('input', () => filterEmails(filterInput.value));
+
+    // Initial render
+    renderEmails(emails);
+
+  </script>
+</body>
+</html>
