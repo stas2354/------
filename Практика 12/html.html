@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Output</title>
+</head>
+<body>
+
+<h1>JavaScript Results</h1>
+
+<div id="output1">Result 1 will appear here</div>
+<div id="output2">Result 2 will appear here</div>
+<div id="output3">Result 3 will appear here</div>
+<div id="output4">Result 4 will appear here</div>
+<div id="output5">Result 5 will appear here</div>
+
+
+<script>
+// 1. Array manipulation
+const arr1 = [1, 2, 3];
+const arr2 = arr1.map(item => (item + 10) * 3);
+document.getElementById("output1").textContent = "Result 1: " + JSON.stringify(arr2);
+
+
+// 2. Age calculation
+const birthYears = [1995, 1988, 2002];
+const currentYear = new Date().getFullYear();
+const ages = birthYears.map(year => currentYear - year);
+document.getElementById("output2").textContent = "Result 2: " + JSON.stringify(ages);
+
+
+// 3. Admin check
+const users = [
+  { name: 'Peter', age: 25, isAdmin: true },
+  { name: 'Mark', age: 17, isAdmin: false },
+  { name: 'John', age: 30, isAdmin: true },
+  { name: 'Jane', age: 20, isAdmin: false }
+];
+
+const adminNames = users
+  .filter(user => user.age >= 18 && user.isAdmin)
+  .map(user => user.name);
+document.getElementById("output3").textContent = "Result 3: " + JSON.stringify(adminNames);
+
+
+// 4. Average score
+const studentScores = [85, 92, 78, 95, 88];
+const averageScore = studentScores.reduce((sum, score) => sum + score, 0) / studentScores.length;
+document.getElementById("output4").textContent = "Result 4: " + averageScore;
+
+
+// 5. String length check
+const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
+const binaryArray = strArray.map(item => item.length <= 3 ? 0 : 1);
+document.getElementById("output5").textContent = "Result 5: " + JSON.stringify(binaryArray);
+
+</script>
+
+</body>
+</html>
