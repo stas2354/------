@@ -1,44 +1,54 @@
-.header {
-    background-color: #f0f0f0;
-    padding: 10px;
+body {
+    font-family: sans-serif;
+    background-color: #000; /* Темный фон, как в фильмах */
+    color: #fff; /* Белый текст */
+  }
+  
+  .page__header {
+    background-color: #222;
+    padding: 20px;
   }
   
   .header__logo {
     font-size: 2em;
+    font-weight: bold;
+    color: #FFD700; /* Золотой цвет */
   }
   
-  .navigation {
-    text-align: center;
-  }
-  
-  .navigation__list {
+  .nav__list {
     list-style: none;
     padding: 0;
   }
   
-  .navigation__item {
+  .nav__item {
     display: inline;
-    margin: 0 10px;
+    margin-right: 20px;
   }
   
-  .main {
-    display: flex;
+  .nav__item a {
+    color: #fff;
+    text-decoration: none;
   }
   
-  .sidebar {
-    width: 200px;
-    padding: 10px;
-  }
   
   .main__content {
-    flex: 1;
-    padding: 10px;
+    background-color: #333;
+    padding: 20px;
   }
   
-  .footer {
+  .main__sidebar-left, .main__sidebar-right {
+    background-color: #444;
+    padding: 20px;
+    width: 200px;
+    float: left;
+  }
+  
+  .main__sidebar-right{
+    float: right;
+  }
+  
+  .page__footer {
+    background-color: #222;
+    padding: 10px;
     text-align: center;
-    padding: 10px;
-    background-color: #eee;
   }
-  
-  
