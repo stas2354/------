@@ -2,41 +2,63 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Звездные Войны: Галактика</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кинотеатр</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">  <!-- Link to your stylesheet -->
+  <script src="js.js" defer></script>  <!-- Link to your Javascript -->
 </head>
 <body>
+  <div class="container-fluid">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title">Кинотеатр</h1>
+      </div>
+    </header>
 
-  <header class="page__header">
-    <div class="header__logo">Звездные Войны</div>
-    <nav class="header__nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">Главная</a></li>
-        <li class="nav__item"><a href="#">Персонажи</a></li>
-        <li class="nav__item"><a href="#">Звездолеты</a></li>
-        <li class="nav__item"><a href="#">Планеты</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="#">Информация</a></li>
+            <li class="nav-item"><a class="nav-link" href="45.html">Контакты</a></li>
+            <li class="nav-item"><a class="nav-link" href="34.html">Комментарии</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-  </header>
 
-  <main class="page__main">
-    <aside class="main__sidebar-left">
-      <!-- Левая боковая панель -->
-    </aside>
-    <section class="main__content">
-      <!-- Центральная часть -->
-      <h1>Добро пожаловать в Галактику!</h1>
-      <p>Да пребудет с вами Сила!</p>
-    </section>
-    <aside class="main__sidebar-right">
-      <!-- Правая боковая панель -->
-    </aside>
-  </main>
+    <main class="main">
+      <div class="main__content">
+        <div class="main__posters">
+          <div class="posters-list" id="posters-container"></div>
+        </div>
 
-  <footer class="page__footer">
-    <div class="footer__copyright">&copy; 2023 Звездные Войны</div>
-  </footer>
+        <div class="main__cart">
+          <div class="cart">
+            <div class="cart__header">Ваша корзина</div>
+            <div class="cart__body" id="cart-items">
+              <p class="cart__empty-message" id="cart-empty-message">Ваша корзина пуста.</p>
+            </div>
+            <div class="cart__footer">
+              <p class="cart__item-count">Всего товаров: <span id="total-items">0</span></p>
+              <p class="cart__total-sum">Сумма: <span id="total-sum">0</span> руб.</p>
+              <button class="btn btn-danger cart__clear-button" id="clear-cart">Очистить корзину</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="footer">© 2023 Кинотеатр</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 </html>
-  

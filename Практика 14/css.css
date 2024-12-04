@@ -1,54 +1,79 @@
+/* General Styles */
 body {
     font-family: sans-serif;
-    background-color: #000; /* Темный фон, как в фильмах */
-    color: #fff; /* Белый текст */
+    margin: 0; /* Remove default body margins */
   }
   
-  .page__header {
-    background-color: #222;
+  .main__posters {
+    display: grid; /* Use grid for easier responsive layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-gap: 20px;
     padding: 20px;
   }
   
-  .header__logo {
-    font-size: 2em;
-    font-weight: bold;
-    color: #FFD700; /* Золотой цвет */
+  .poster-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden; /* Prevents image overflow */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
   
-  .nav__list {
-    list-style: none;
-    padding: 0;
+  .poster-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
   }
   
-  .nav__item {
-    display: inline;
-    margin-right: 20px;
+  .poster-card:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
   }
   
-  .nav__item a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  
-  .main__content {
-    background-color: #333;
-    padding: 20px;
-  }
-  
-  .main__sidebar-left, .main__sidebar-right {
-    background-color: #444;
-    padding: 20px;
-    width: 200px;
-    float: left;
-  }
-  
-  .main__sidebar-right{
-    float: right;
-  }
-  
-  .page__footer {
-    background-color: #222;
+  .poster-card__title { /* Add title for each poster */
     padding: 10px;
-    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Cart Styles */
+  .cart {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  
+  .cart__header {
+    background-color: #343a40; /* Darker gray */
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+    font-weight: bold;
+  }
+  
+  .cart__body {
+    padding: 10px;
+  }
+  
+  .cart__item { /* Style for each item in the cart */
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .cart__footer {
+    border-top: 1px solid #eee;
+    padding: 10px;
+    text-align: right;
+  }
+  
+  .cart__clear-button {
+    margin-left: 10px; /* Add some space between total and button */
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main__posters {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column width */
+    }
   }
